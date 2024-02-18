@@ -1,13 +1,66 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  body {
+    @apply bg-slate-800 font-body pb-5;
+  }
+}
+@layer components {
+  .page-container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bg-primary {
+    background-color: #f62682;
+  }
+  .bg-second {
+    background-color: #17069c;
+  }
+  .bg-hover-primary {
+    background-color: #641b3c;
+  }
+  .banner .swiper {
+    height: 100%;
+  }
+  .movieList .swiper-slide {
+    width: 250px;
+    height: auto;
+  }
+  .movieDetailPage .swiper-slide {
+    width: 300px;
+    height: auto;
+  }
+  .movieSimilar .swiper-slide {
+    width: 300px;
+    height: auto;
+  }
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+  }
+  .selected {
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #f62682;
+  }
+
+  @media (min-width: 360px) {
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
 }
